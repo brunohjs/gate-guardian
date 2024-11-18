@@ -1,18 +1,20 @@
-name: Pypi Publisher
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+name: Pypi Publisher - TEST
+on:
+  milestone:
+    types: [created]
 jobs:
   pypi-publish:
     name: Upload release to PyPI
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/gate-guardian
+      url: https://test.pypi.org/p/gate-guardian
     permissions:
-      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+      id-token: write
     steps:
-    # retrieve your distributions here
-
-    - name: Publish package distributions to PyPI
+    - name: Publish package distributions to TestPyPI
       uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        repository-url: https://test.pypi.org/legacy/
+        password: ${{ secrets.TEST_PYPI_API_TOKEN }}
           
