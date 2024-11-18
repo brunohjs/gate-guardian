@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gate-guardian"
+version = "0.0.1"
+dependencies = [
+    "boto3",
+    "cpf-cnpj-validate",
+    "langevals-core",
+    "presidio-analyzer",
+    "presidio-anonymizer",
+    "pydantic",
+    "python-dotenv",
+    "spacy"
+]
+requires-python = ">=3.10"
+authors = [
+  {name = "Bruno Justo", email = "brunohjs@gmail.com"}
+]
+maintainers = [
+  {name = "Bruno Justo", email = "brunohjs@gmail.com"}
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["pii-detector", "python", "spacy", "regex", "mask"]
+
+[project.urls]
+Repository = "https://github.com/brunohjs/gate-guardian"
+"Bug Tracker" = "https://github.com/brunohjs/gate-guardian/issues"
+Changelog = "https://github.com/brunohjs/gate-guardian/blob/master/CHANGELOG.md"
